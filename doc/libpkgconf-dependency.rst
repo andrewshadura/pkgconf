@@ -14,6 +14,7 @@ The `dependency` module provides support for building `dependency lists` (the ba
    :param char* package: The package `atom` to set on the dependency node.
    :param char* version: The package `version` to set on the dependency node.
    :param pkgconf_pkg_comparator_t compare: The comparison operator to set on the dependency node.
+   :param uint flags: Any flags to attach to the dependency node.
    :return: A dependency node.
    :rtype: pkgconf_dependency_t *
 
@@ -41,6 +42,7 @@ The `dependency` module provides support for building `dependency lists` (the ba
    :param pkgconf_client_t* client: The client object that owns the package this dependency list belongs to.
    :param pkgconf_list_t* deplist_head: The dependency list to populate with dependency nodes.
    :param char* depends: The dependency data to parse.
+   :param uint flags: Any flags to attach to the dependency nodes.
    :return: nothing
 
 .. c:function:: void pkgconf_dependency_parse(const pkgconf_client_t *client, pkgconf_pkg_t *pkg, pkgconf_list_t *deplist, const char *depends)
@@ -53,4 +55,5 @@ The `dependency` module provides support for building `dependency lists` (the ba
    :param pkgconf_pkg_t* pkg: The package object that owns this dependency list.
    :param pkgconf_list_t* deplist: The dependency list to populate with dependency nodes.
    :param char* depends: The dependency data to parse.
+   :param uint flags: Any flags to attach to the dependency nodes.
    :return: nothing

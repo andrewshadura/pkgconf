@@ -42,38 +42,6 @@ attached to a given client object.
    :param char* kv: The variable in the form of ``key=value``.
    :return: nothing
 
-.. c:function:: pkgconf_tuple_t *pkgconf_tuple_add(const pkgconf_client_t *client, pkgconf_list_t *list, const char *key, const char *value, bool parse)
-
-   Optionally parse and then define a variable.
-
-   :param pkgconf_client_t* client: The pkgconf client object to access.
-   :param pkgconf_list_t* list: The variable list to add the new variable to.
-   :param char* key: The name of the variable being added.
-   :param char* value: The value of the variable being added.
-   :param bool parse: Whether or not to parse the value for variable substitution.
-   :return: a variable object
-   :rtype: pkgconf_tuple_t *
-
-.. c:function:: char *pkgconf_tuple_find(const pkgconf_client_t *client, pkgconf_list_t *list, const char *key)
-
-   Look up a variable in a variable list.
-
-   :param pkgconf_client_t* client: The pkgconf client object to access.
-   :param pkgconf_list_t* list: The variable list to search.
-   :param char* key: The variable name to search for.
-   :return: the value of the variable or ``NULL``
-   :rtype: char *
-
-.. c:function:: char *pkgconf_tuple_parse(const pkgconf_client_t *client, pkgconf_list_t *vars, const char *value)
-
-   Parse an expression for variable substitution.
-
-   :param pkgconf_client_t* client: The pkgconf client object to access.
-   :param pkgconf_list_t* list: The variable list to search for variables (along side the global variable list).
-   :param char* value: The ``key=value`` string to parse.
-   :return: the variable data with any variables substituted
-   :rtype: char *
-
 .. c:function:: void pkgconf_tuple_free_entry(pkgconf_tuple_t *tuple, pkgconf_list_t *list)
 
    Deletes a variable object, removing it from any variable lists and releasing any memory associated
